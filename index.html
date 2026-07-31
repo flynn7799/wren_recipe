@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Recipe Book</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Wren & Family Recipe Book</h1>
+
+  <!-- HOME VIEW: recipe cards get inserted here by script.js -->
+  <div id="home-view"></div>
+
+  <!-- RECIPE VIEW: a single recipe's details get inserted here -->
+  <div id="recipe-view" style="display: none;">
+    <button onclick="showHome()">← Back to all recipes</button>
+    <div id="recipe-content"></div>
+  </div>
+
+  <!-- Load our recipe data first, then the script that uses it -->
+  <script src="recipes.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
