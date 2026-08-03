@@ -16,6 +16,25 @@ const recipes = [
       "Great with Wheat Thin crackers."
     ]
   },
+    {
+    id: "shrimp-dip",
+    title: "Shrimp Dip",
+    serves: "Unknown",
+    category: "Appetizers",
+    ingredients: [
+      "1 bag of deveined, tail off, and pealed shrimp",
+      "Mayo",
+      "Ketchup",
+      "Shrimp paste if available",
+      "2 block of cream cheese",
+      "1 bag of ruffle style chips"
+    ],
+    steps: [
+      "Soften cream cheese",
+      "Mix ingredients well",
+      "Enjoy!"
+    ]
+  },
   {
     id: "ezme",
     title: "Ezme - Finely Chopped Tomato Salad",

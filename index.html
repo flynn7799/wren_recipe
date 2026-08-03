@@ -2,20 +2,68 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Recipe Book</title>
+  <title>Wren & Family's Recipe Book</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1>Wren & Family Recipe Book</h1>
+  <h1 id="page-title" onclick="handleTitleClick()">My Recipe Book</h1>
+  <button id="add-recipe-btn" style="display:none;" onclick="showAddRecipe()">+ Add Recipe</button>
 
-  <!-- HOME VIEW: recipe cards get inserted here by script.js -->
-  <div id="home-view"></div>
+ <!-- WELCOME VIEW -->
+  <div id="welcome-view">
+    <p class="welcome-text">Welcome! What would you like to make today?</p>
 
-  <!-- RECIPE VIEW: a single recipe's details get inserted here -->
+    <input type="text" id="search-input" placeholder="Search recipes..." oninput="handleSearch()">
+    <div id="search-results"></div>
+
+    <div id="category-buttons" class="category-buttons">
+      <button class="category-btn" onclick="showCategory('Appetizers')">Appetizers</button>
+      <button class="category-btn" onclick="showCategory('Main Dish')">Main Dish</button>
+      <button class="category-btn" onclick="showCategory('Dessert')">Dessert</button>
+    </div>
+  </div>
+  <!-- CATEGORY VIEW: shows recipe cards for one category -->
+  <div id="category-view" style="display: none;">
+    <button onclick="backFromRecipe()">← Back</button>
+    <h2 id="category-title"></h2>
+    <div id="category-cards"></div>
+  </div>
+
+  <!-- RECIPE VIEW: shows one full recipe -->
   <div id="recipe-view" style="display: none;">
-    <button onclick="showHome()">← Back to all recipes</button>
+    <button onclick="backToCategory()">← Back</button>
     <div id="recipe-content"></div>
+  </div>
+
+  <!-- ADD RECIPE VIEW -->
+  <div id="add-recipe-view" style="display: none;">
+    <button onclick="showWelcome()">← Back</button>
+    <h2>Add a New Recipe</h2>
+
+    <label>Title</label>
+    <input type="text" id="new-title" placeholder="Recipe title">
+
+    <label>Serves</label>
+    <input type="text" id="new-serves" placeholder="e.g. 4 or Unknown">
+
+    <label>Category</label>
+    <select id="new-category">
+      <option value="Appetizers">Appetizers</option>
+      <option value="Main Dish">Main Dish</option>
+      <option value="Dessert">Dessert</option>
+    </select>
+
+    <label>Ingredients (one per line)</label>
+    <textarea id="new-ingredients" rows="6" placeholder="2 cups flour&#10;1 tsp salt"></textarea>
+
+    <label>Instructions (one step per line)</label>
+    <textarea id="new-steps" rows="6" placeholder="Preheat oven to 350...&#10;Mix dry ingredients..."></textarea>
+
+    <button onclick="generateRecipeCode()">Generate Code</button>
+
+    <h3>Copy this into recipes.js</h3>
+    <textarea id="generated-code" rows="12" readonly placeholder="Your code will appear here..."></textarea>
   </div>
 
   <!-- Load our recipe data first, then the script that uses it -->

@@ -10,6 +10,34 @@ body {
 h1 {
   text-align: center;
   color: #b5651d;
+  cursor: default;
+}
+
+.welcome-text {
+  text-align: center;
+  font-size: 1.2em;
+  margin-bottom: 25px;
+}
+
+.category-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.category-btn {
+  background-color: #b5651d;
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.category-btn:hover {
+  background-color: #96521a;
 }
 
 .recipe-card {
@@ -53,4 +81,49 @@ button {
 
 button:hover {
   background-color: #96521a;
+}
+
+#add-recipe-btn {
+  display: block;
+  margin: 0 auto 25px auto;
+}
+
+#add-recipe-view label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+#add-recipe-view input,
+#add-recipe-view select,
+#add-recipe-view textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+#generated-code {
+  background-color: #f5f5f5;
+  font-family: monospace;
+  font-size: 0.85em;
+}
+#search-input {
+  width: 60%;
+  display: block;
+  margin: 0 auto 20px auto;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.9em;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+#search-input:focus {
+  outline: none;
+  border-color: #b5651d;
 }
